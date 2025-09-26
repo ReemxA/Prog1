@@ -1,10 +1,12 @@
 import java.util.Scanner;
 import java.util.InputMismatchException;
 
-/*
- * Konsolenprogramm mit dem Namen CalculatorApp, das dem Benutzer ein einfaches Menü zur Auswahl bietet.
+/* Aufgabenstellung:
+ * Implementieren Sie ein Konsolenprogramm mit dem Namen CalculatorApp, 
+ * das dem Benutzer ein einfaches Menü zur Auswahl bietet.
  * 
- * Das Programm soll eine Endlosschleife verwenden und bei jeder Iteration das folgende Menü anzeigen:
+ * Das Programm soll eine Endlosschleife verwenden 
+ * und bei jeder Iteration das folgende Menü anzeigen:
  * (1) Zwei Zahlen addieren
  * (2) Zwei Zahlen multiplizieren
  * (3) Programm beenden
@@ -12,7 +14,8 @@ import java.util.InputMismatchException;
  * Der Benutzer wählt eine Option durch Eingabe einer Zahl (1, 2 oder 3).
  * Das Programm soll auf die Eingabe wie folgt reagieren:
  * 
- * Bei Eingabe von "1" soll die Methode addNumbers(int a, int b) (zu implementieren) aufgerufen werden.
+ * Bei Eingabe von "1" soll die Methode addNumbers(int a, int b) 
+ * (zu implementieren) aufgerufen werden.
  * Vor dem Methodenaufruf sollen zwei int-Zahlen vom Benutzer eingelesen werden.
  * Die Methode berechnet die Summe der beiden Zahlen und gibt den Wert zurück.
  * Das Ergebnis wird auf der Konsole ausgegeben.
@@ -26,6 +29,7 @@ import java.util.InputMismatchException;
  * 
  * Benutzen Sie den dargestellten Code als Anfangslösung.
  */
+
 public class CalculatorApp {
 
     // Im Anfangscode kein globaler Klassenscanner vorhanden, 
@@ -34,8 +38,6 @@ public class CalculatorApp {
     private static Scanner scanner = new Scanner(System.in);
     
     public static void main(String[] args) {
-
-
         while (true) {
             showMainMenu();
             String choice = readUserInput();
