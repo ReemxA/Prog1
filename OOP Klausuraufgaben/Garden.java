@@ -36,6 +36,49 @@ public class Garden {
 
      // Attribute:
      private String name;
-     private String[] plants;
-     private
+     private Plant[] plants;
+     private int currentSize = 0;
+     
+     // Konstruktor
+     public Garden(String name, int maxSize) {
+        this.name = name;
+        this.plants = new Plant[maxSize];
+     }
+
+     // Getter für findPlantByName():
+     public String getName() {
+        return this.name;
+     }
+
+     // Methoden:
+     public void addPlant(Plant plant) {
+        if (currentSize < plants.length) {
+            plants[currentSize] = plant;
+            currentSize++;
+        } else {
+            System.out.println("Keine weiteren Pflanzen können hinzugefügt werden");
+        }
+     }
+
+     public void waterAllPlants(int amount) {
+        for (int i = 0; i < currentSize; i++) {
+            plants[i].water(amount);
+        }
+     }
+     public void listHealthyPlants() {
+                for (int i = 0; i < currentSize; i++) {
+            if (plants[i].isHealthy()) {
+                System.out.println("gesunde Pflanzen: ");
+                plants[i].printPlant();
+            }
+        }
+     }
+     public Plant findPlantByName(String name) {
+        for(int i = 0; i < currentSize; i++) {
+            if (plants[i].getName().equals(name)) {
+                return plants[i];
+            }
+        }
+        return null;
+     }
 }
