@@ -45,11 +45,6 @@ public class Garden {
         this.plants = new Plant[maxSize];
      }
 
-     // Getter für findPlantByName():
-     public String getName() {
-        return this.name;
-     }
-
      // Methoden:
      public void addPlant(Plant plant) {
         if (currentSize < plants.length) {

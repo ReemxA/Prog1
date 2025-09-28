@@ -48,6 +48,11 @@ public class Plant {
         this.waterLevel = 5;
     }
     
+    // Getter für findPlantByName() in Klasse Garden:
+     public String getName() {
+        return this.name;
+     }
+
     // Methoden:
 
     // nicht statisch, da alle Methoden auf Objektvariablen zugreifen.
