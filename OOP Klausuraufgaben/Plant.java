@@ -1,5 +1,5 @@
 public class Plant {
-    
+
     /*
      * Aufgabenstellung:
      * 
@@ -34,38 +34,47 @@ public class Plant {
     // Attribute bzw. Objektvariablen:
     private String name;
     private String type;
-    private int daysGrown = 0;
-    private int waterLevel = 5;
+    private int daysGrown;
+    private int waterLevel;
     
     // Konstruktor:
-    public Plant(String name, String type, int daysGrown, int waterLevel) {
+    public Plant(String name, String type) {
+        // Konstruktor mit nur Parametern name und type, 
+        // da daysGrown und waterLevel laut Aufgabe feste Startwerte haben (0 und 5)
+        // und vermieden werden soll, dass diese Initialwerte überschrieben werden.
         this.name = name;
         this.type = type;
-        this.daysGrown = daysGrown;
-        this.waterLevel = waterLevel;
+        this.daysGrown = 0;
+        this.waterLevel = 5;
     }
     
     // Methoden:
-    public static void grow(int days) {
-        this.daysGrown =+ days;
-        this.waterLevel =- days;
+
+    // nicht statisch, da alle Methoden auf Objektvariablen zugreifen.
+    //
+    // static Methoden gehören zur Klasse, nicht zum Objekt
+    // und dürfen nicht auf this oder Instanzvariablen zugreifen.
+
+    public void grow(int days) {
+        this.daysGrown += days; // += nicht =+ 
+        this.waterLevel -= days;
         System.out.println(name + " ist um " + days + " Tage gewachsen ");
     }
     
-    public static void water(int amount) {
-        this.waterLevel =+ amount;
+    public void water(int amount) {
+        this.waterLevel += amount;
         System.out.println(name + " wurde um " + amount + " Einheiten gegossen ");
     }
     
-    public static boolean isHealthy() {
+    public boolean isHealthy() {
         if(waterLevel <= 10 && waterLevel >= 3) {
-            return true
+            return true;
         } else {
             return false;
         }
     }
     
-    public static void printPlant() {
+    public void printPlant() {
         System.out.println("Name: " + name);
         System.out.println("Art: " + type);
         System.out.println("gewachsene Tage: " + daysGrown);
